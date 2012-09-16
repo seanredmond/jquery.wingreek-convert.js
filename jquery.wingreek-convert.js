@@ -25,198 +25,195 @@
 
 
     var alphabet = {
-        '\x21': '\u03F2', // greek lunate sigma symbol
-        '\x22': '\u201d', // right double quotation mark
-        '\x23': '\u03cb', // small upsilon w/ dialytika
-        '\x24': '\u230a', // left low corner bracket
-        '\x25': '\u03F9', // greek capital lunate sigma symbol
-        '\x26': '\u1FB3', // small alpha w/ ypogegrammeni
-        '\x27': '\u2019', // right single quotation mark
-        '\x2b': '\u1FBE', // greek prosgegrammeni
-        '\x3a': '\u0387', // greek ano teleia
-        '\x3b': '\u037E', // greek question mark
-        '\x3d': '\u1FE5', // small rho w/ dasia
-        '\x40': '\u1FE3', // small upsilon w/ dialytika & oxia
-        'A': '\u0391', // capital alpha
-        'B': '\u0392', // capital beta
-        'C': '\u03A8', // capital psi
-        'D': '\u0394', // capital delta
-        'E': '\u0395', // capital epsilon
-        'F': '\u03A6', // capital phi
-        'G': '\u0393', // capital gamma
-        'H': '\u0397', // capital eta
-        'I': '\u0399', // capital iota
-        'J': '\u039E', // capital xi
-        'K': '\u039A', // capital kappa
-        'L': '\u039B', // capital lamda
-        'M': '\u039C', // capital mu
-        'N': '\u039D', // capital nu
-        'O': '\u039F', // capital omicron
-        'P': '\u03A0', // capital pi
-        'Q': '\u03E0', // greek letter sampi
-        'R': '\u03A1', // capital rho
-        'S': '\u03A3', // capital sigma
-        'T': '\u03A4', // capital tau
-        'U': '\u03A5', // capital upsilon
-        'V': '\u03A9', // capital omega
-        'W': '\u03DC', // greek letter digamma
-        'X': '\u03A7', // capital chi
-        'Y': '\u0398', // capital theta
-        'Z': '\u0396',  // capital zeta
-        'a': '\u03B1', // small alpha
-        'b': '\u03B2', // small beta
-        'c': '\u03C8', // small psi
-        'd': '\u03B4', // small delta
-        'e': '\u03B5', // small epsilon
-        'f': '\u03C6', // small phi
-        'g': '\u03B3', // small gamma
-        'h': '\u03B7', // small eta
-        'i': '\u03B9', // small iota
-        'j': '\u03BE', // small xi
-        'k': '\u03BA', // small kappa
-        'l': '\u03BB', // small lamda
-        'm': '\u03BC', // small mu
-        'n': '\u03BD', // small nu
-        'o': '\u03BF', // small omicron
-        'p': '\u03C0', // small pi
-        'q': '\u03D8', // greek letter archaic koppa
-        'r': '\u03C1', // small rho
-        's': '\u03C3', // small sigma
-        't': '\u03C4', // small tau
-        'u': '\u03C5', // small upsilon
-        'v': '\u03C9', // small omega
-        'w': '\u03C2', // small final sigma
-        'x': '\u03C7', // small chi
-        'y': '\u03B8', // small theta
-        'z': '\u03B6', // small zeta
-        '\x5f': '\u27E6', // mathematical left white square bracket
-        '\x60': '\u0323', // combining dot below
-        '\x7e': '\u2020', // dagger
-        '\x80': '\u1FFD', // greek oxia
-        '\x81': '\u1FEF', // greek varia
-        '\x82': '\u1FC0', // greek perispomeni 
-        '\x83': '\u1FBF', // greek psili
-        '\x84': '\u1FFE', // greek dasia
-        '\x85': '\u1FCE', // greek psili & oxia
-        '\x86': '\u1FDE', // greek dasia & oxia
-        '\x87': '\u1FCD', // greek psili & varia
-        '\x88': '\u1FDD', // greek dasia & varia
-        '\x89': '\u1FCF', // greek psili & perispomeni
-        '\x8a': '\u1FDF', // greek dasia & perispomeni
-        '\x8b': '\u1f71', // small alpha w/ oxia
-        '\x8c': '\u1f70', // small alpha w/ varia
-        '\x8d': '\u1fB6', // small alpha w/ perispomeni
-        '\x8e': '\u1f00', // small alpha w/ psili
-        '\x8f': '\u1f01', // small alpha w/ dasia
-        '\x90': '\u1f04', // small alpha w/ psili & oxia
-        '\x91': '\u1f05', // small alpha w/ dasia & oxia
-        '\x92': '\u1f02', // small alpha w/ psili & varia
-        '\x93': '\u1f03', // small alpha w/ dasia & varia
-        '\x94': '\u1f06', // small alpha w/ psili & perispomeni
-        '\x95': '\u1f07', // small alpha w/ dasia & perispomeni
-        '\x96': '\u1fB4', // small alpha w/ oxia & ypogegrammeni
-        '\x97': '\u1fB2', // small alpha w/ varia & ypogegrammeni
-        '\x98': '\u1fB7', // small alpha w/ perispomeni & ypogegrammeni
-        '\x99': '\u1f80', // small alpha w/ psili & ypogegrammeni
-        '\x9a': '\u1f81', // small alpha w/ dasia & ypogegrammeni
-        '\x9b': '\u1f84', // small alpha w/ psili & oxia & ypogegrammeni
-        '\x9c': '\u1f85', // small alpha w/ dasia & oxia & ypogegrammeni
-        '\x9d': '\u1f82', // small alpha w/ psili & varia & ypogegrammeni
-        '\x9e': '\u1f83', // small alpha w/ dasia & varia & ypogegrammeni
-        '\x9f': '\u1f86', // small alpha w/ psili & perispomeni & ypogegrammeni
-        '\xa1': '\u1F73', // small epsilon w/ oxia
-        '\xa2': '\u1f72', // small epsilon w/ varia
-        '\xa3': '\u1fE2', // small upsilon w/ dialytika & varia
-        '\xa4': '\u1f10', // small epsilon w/ psili
-        '\xa5': '\u1f11', // small epsilon w/ dasia
-        '\xa6': '\u1f14', // small epsilon w/ psili & oxia
-        '\xa7': '\u1f15', // small epsilon w/ dasia & oxia
-        '\xa8': '\u1f12', // small epsilon w/ psili & varia
-        '\xa9': '\u1f13', // small epsilon w/ dasia & varia
-        '\xaa': '\u1f87', // small alpha w/ dasia & perispomeni & ypogegrammeni
-        '\xab': '\u27E7', // mathematical right white square bracket
-        '\xad': '\u02D8', // breve
-        '\xae': '\u1F75', // small eta w/ oxia
-        '\xaf': '\u1F74', // small eta w/ varia
-        '\xb0': '\u1FC6', // small eta w/ perispomeni
-        '\xb1': '\u1F20', // small eta w/ psili
-        '\xb2': '\u1F21', // small eta w/ dasia
-        '\xb3': '\u1F24', // small eta w/ psili & oxia
-        '\xb4': '\u1F25', // small eta w/ dasia & oxia
-        '\xb5': '\u1F22', // small eta w/ psili & varia
-        '\xb6': '\u1F23', // small eta w/ dasia & varia
-        '\xb7': '\u1F26', // small eta w/ psili & perispomeni
-        '\xb8': '\u1F27', // small eta w/ dasia & perispomeni
-        '\xb9': '\u1FC4', // small eta w/ oxia & ypogegrammeni
-        '\xba': '\u1FC2', // small eta w/ varia & ypogegrammeni
-        '\xbb': '\u1FC7', // small eta w/ perispomeni & ypogegrammeni
-        '\xbc': '\u1F90', // small eta w/ psili & ypogegrammeni
-        '\xbd': '\u1F91', // small eta w/ dasia & ypogegrammeni
-        '\xbe': '\u1F94', // small eta w/ psili & oxia & ypogegrammeni
-        '\xbf': '\u1F95', // small eta w/ dasia & oxia & ypogegrammeni
-        '\xc0': '\u1F92', // small eta w/ psili & varia & ypogegrammeni
-        '\xc1': '\u1F93', // small eta w/ dasia & varia & ypogegrammeni
-        '\xc2': '\u1F96', // small eta w/ psili & perispomeni & ypogegrammeni
-        '\xc3': '\u1F97', // small eta w/ dasia & perispomeni & ypogegrammeni
-        '\xc4': '\u1FF3', // small omega w/ ypogegrammeni
-        '\xc5': '\u1F7D', // small omega w/ oxia
-        '\xc6': '\u1F7C', // small omega w/ varia
-        '\xc7': '\u1FF6', // small omega w/ perispomeni
-        '\xc8': '\u1F60', // small omega w/ psili
-        '\xc9': '\u1F61', // small omega w/ dasia
-        '\xca': '\u1F64', // small omega w/ psili & oxia
-        '\xcb': '\u1F65', // small omega w/ dasia & oxia
-        '\xcc': '\u1F62', // small omega w/ psili & varia
-        '\xcd': '\u1F63', // small omega w/ dasia & varia
-        '\xce': '\u1F66', // small omega w/ psili & perispomeni
-        '\xcf': '\u1F67', // small omega w/ dasia & perispomeni
-        '\xd0': '\u1FF4', // small omega w/ oxia & ypogegrammeni
-        '\xd1': '\u1FF2', // small omega w/ varia & ypogegrammeni
-        '\xd2': '\u1FF7', // small omega w/ perispomeni & ypogegrammeni
-        '\xd3': '\u1FA0', // small omega w/ psili & ypogegrammeni
-        '\xd4': '\u1FA1', // small omega w/ dasia & ypogegrammeni
-        '\xd5': '\u1FA4', // small omega w/ psili & oxia & ypogegrammeni
-        '\xd6': '\u1FA5', // small omega w/ dasia & oxia & ypogegrammeni
-        '\xd7': '\u1FA2', // small omega w/ psili & varia & ypogegrammeni
-        '\xd8': '\u1FA3', // small omega w/ dasia & varia & ypogegrammeni
-        '\xd9': '\u1FA6', // small omega w/ psili & perispomeni & ypogegrammeni
-        '\xda': '\u1FA7', // small omega w/ dasia & perispomeni & ypogegrammeni
-        '\xdb': '\u1F77', // small iota w/ oxia
-        '\xdc': '\u1F76', // small iota w/ varia
-        '\xdd': '\u1FD6', // small iota w/ perispomeni
-        '\xde': '\u1F30', // small iota w/ psili
-        '\xdf': '\u1F31', // small iota w/ dasia
-        '\xe0': '\u1F34', // small iota w/ psili & oxia
-        '\xe1': '\u1F35', // small iota w/ dasia & oxia
-        '\xe2': '\u1F32', // small iota w/ psili & varia
-        '\xe3': '\u1F33', // small iota w/ dasia & varia
-        '\xe4': '\u1F36', // small iota w/ psili & perispomeni
-        '\xe5': '\u1F37', // small iota w/ dasia & perispomeni
-        '\xe6': '\u1F7B', // small upsilon w/ oxia
-        '\xe7': '\u1F7A', // small upsilon w/ varia
-        '\xe8': '\u1FE6', // small upsilon w/ perispomeni
-        '\xe9': '\u1F50', // small upsilon w/ psili
-        '\xea': '\u1F51', // small upsilon w/ dasia
-        '\xeb': '\u1F54', // small upsilon w/ psili & oxia
-        '\xec': '\u1F55', // small upsilon w/ dasia & oxia
-        '\xed': '\u1F52', // small upsilon w/ psili & varia
-        '\xee': '\u1F53', // small upsilon w/ dasia & varia
-        '\xef': '\u1F56', // small upsilon w/ psili & perispomeni
-        '\xf0': '\u1F57', // small upsilon w/ dasia & perispomeni
-        '\xf1': '\u1F79', // small omicron w/ oxia
-        '\xf2': '\u1F78', // small omicron w/ varia
-        '\xf3': '\u03CA', // small iota w/ dialytika
-        '\xf4': '\u1F40', // small omicron w/ psili
-        '\xf5': '\u1F41', // small omicron w/ dasia
-        '\xf6': '\u1F44', // small omicron w/ psili & oxia
-        '\xf7': '\u1F45', // small omicron w/ dasia & oxia
-        '\xf8': '\u1F42', // small omicron w/ psili & varia
-        '\xf9': '\u1F43', // small omicron w/ dasia & varia
-        '\xfa': '\u1FC3', // small eta w/ ypogegrammeni
-        '\xfb': '\u03DA', // greek letter stigma
-        '\xfc': '\u230B', // right low corner bracket
-        '\xfd': '\u1Fd3', // small iota w/ dialytika & oxia
-        '\xfe': '\u1Fd2' // small iota w/ dialytika & varia
+        '\x21': '\u2199', //  south west arrow
+        '\x22': '\u03E0', //  greek letter sampi
+        '\x23': '\u03DC', //  greek letter digamma
+        '\x24': '\u03DA', //  greek letter stigma
+        '\x25': '\u03DE', //  greek letter koppa
+        '\x26': '\u03F2', //  greek lunate sigma symbol
+        '\x27': '\u1FBF', //  greek psili
+        '\x2b': '\u203B', //  reference mark
+        '\x2f': '\u1FFD', //  greek oxia
+        '\x3a': '\u0387', //  greek ano teleia
+        '\x3b': '\u037E', //  greek question mark
+        '\x40': '\u0776', //  diaeresis
+        '\x41': '\u0391', //  greek capital letter alpha
+        '\x42': '\u0392', //  greek capital letter beta
+        '\x43': '\u03A7', //  greek capital letter chi
+        '\x44': '\u0394', //  greek capital letter delta
+        '\x45': '\u0395', //  greek capital letter epsilon
+        '\x46': '\u03A6', //  greek capital letter phi
+        '\x47': '\u0393', //  greek capital letter gamma
+        '\x48': '\u0397', //  greek capital letter eta
+        '\x49': '\u0399', //  greek capital letter iota
+        '\x4a': '\u1FF3', //  greek small letter omega with ypogegrammeni
+        '\x4b': '\u039A', //  greek capital letter kappa
+        '\x4c': '\u039B', //  greek capital letter lamda
+        '\x4d': '\u039C', //  greek capital letter mu
+        '\x4e': '\u039D', //  greek capital letter nu
+        '\x4f': '\u039F', //  greek capital letter omicron
+        '\x50': '\u03A0', //  greek capital letter pi
+        '\x51': '\u0398', //  greek capital letter theta
+        '\x52': '\u03A1', //  greek capital letter rho
+        '\x53': '\u03A3', //  greek capital letter sigma
+        '\x54': '\u03A4', //  greek capital letter tau
+        '\x55': '\u03A5', //  greek capital letter upsilon
+        '\x56': '\u1FC3', //  greek small letter eta with ypogegrammeni
+        '\x57': '\u03A9', //  greek capital letter omega
+        '\x58': '\u039E', //  greek capital letter xi
+        '\x59': '\u03A8', //  greek capital letter psi
+        '\x5a': '\u0396', //  greek capital letter zeta
+        '\x5c': '\u1FEF', //  greek varia
+        '\x5e': '\u1FC0', //  greek perispomeni
+        '\x60': '\u1FFE', //  greek dasia
+        '\x61': '\u03B1', //  greek small letter alpha
+        '\x62': '\u03B2', //  greek small letter beta
+        '\x63': '\u03C7', //  greek small letter chi
+        '\x64': '\u03B4', //  greek small letter delta
+        '\x65': '\u03B5', //  greek small letter epsilon
+        '\x66': '\u03C6', //  greek small letter phi
+        '\x67': '\u03B3', //  greek small letter gamma
+        '\x68': '\u03B7', //  greek small letter eta
+        '\x69': '\u03B9', //  greek small letter iota
+        '\x6a': '\u03C2', //  greek small letter final sigma
+        '\x6b': '\u03BA', //  greek small letter kappa
+        '\x6c': '\u03BB', //  greek small letter lamda
+        '\x6d': '\u03BC', //  greek small letter mu
+        '\x6e': '\u03BD', //  greek small letter nu
+        '\x6f': '\u03BF', //  greek small letter omicron
+        '\x70': '\u03C0', //  greek small letter pi
+        '\x71': '\u03B8', //  greek small letter theta
+        '\x72': '\u03C1', //  greek small letter rho
+        '\x73': '\u03C3', //  greek small letter sigma
+        '\x74': '\u03C4', //  greek small letter tau
+        '\x75': '\u03C5', //  greek small letter upsilon
+        '\x76': '\u1FB3', //  greek small letter alpha with ypogegrammeni
+        '\x77': '\u03C9', //  greek small letter omega
+        '\x78': '\u03BE', //  greek small letter xi
+        '\x79': '\u03C8', //  greek small letter psi
+        '\x7a': '\u03B6', //  greek small letter zeta
+        '\x83': '\u1F31', //  greek small letter iota with dasia
+        '\x84': '\u1F30', //  greek small letter iota with psili
+        '\x85': '\u1F77', //  greek small letter iota with oxia
+        '\x86': '\u1F35', //  greek small letter iota with dasia and oxia
+        '\x87': '\u1F34', //  greek small letter iota with psili and oxia
+        '\x88': '\u1F76', //  greek small letter iota with varia
+        '\x89': '\u1F33', //  greek small letter iota with dasia and varia
+        '\x8a': '\u1F32', //  greek small letter iota with psili and varia
+        '\x8b': '\u1FD6', //  greek small letter iota with perispomeni
+        '\x8c': '\u1F37', //  greek small letter iota with dasia and perispomeni
+        '\x8d': '\u1F36', //  greek small letter iota with psili and perispomeni
+        '\x8e': '\u03CA', //  greek small letter iota with dialytika
+        '\x8f': '\u1FD3', //  greek small letter iota with dialytika and oxia
+        '\x90': '\u1FD2', //  greek small letter iota with dialytika and varia
+        '\x91': '\u1FDF', //  greek dasia and perispomeni
+        '\x92': '\u1FCF', //  greek psili and perispomeni
+        '\x93': '\u1FDE', //  greek dasia and oxia
+        '\x94': '\u1FCE', //  greek psili and oxia
+        '\x95': '\u1FDD', //  greek dasia and varia
+        '\x96': '\u1FCD', //  greek psili and varia
+        '\x97': '\u1FEE', //  greek dialytika and oxia
+        '\x98': '\u1F11', //  greek small letter epsilon with dasia
+        '\x99': '\u1F10', //  greek small letter epsilon with psili
+        '\x9a': '\u1F73', //  greek small letter epsilon with oxia
+        '\x9b': '\u1F15', //  greek small letter epsilon with dasia and oxia
+        '\x9c': '\u1F14', //  greek small letter epsilon with psili and oxia
+        '\x9d': '\u1F72', //  greek small letter epsilon with varia
+        '\x9e': '\u1F13', //  greek small letter epsilon with dasia and varia
+        '\x9f': '\u1F12', //  greek small letter epsilon with psili and varia
+        '\xa1': '\u1F01', //  greek small letter alpha with dasia
+        '\xa2': '\u1F00', //  greek small letter alpha with psili
+        '\xa3': '\u1F71', //  greek small letter alpha with oxia
+        '\xa4': '\u1F05', //  greek small letter alpha with dasia and oxia
+        '\xa5': '\u1F04', //  greek small letter alpha with psili and oxia
+        '\xa6': '\u1F70', //  greek small letter alpha with varia
+        '\xa7': '\u1F03', //  greek small letter alpha with dasia and varia
+        '\xa8': '\u1F02', //  greek small letter alpha with psili and varia
+        '\xa9': '\u1FB6', //  greek small letter alpha with perispomeni
+        '\xaa': '\u1F07', //  greek small letter alpha with dasia and perispomeni
+        '\xab': '\u1F06', //  greek small letter alpha with psili and perispomeni
+        '\xac': '\u1F81', //  greek small letter alpha with dasia and ypogegrammeni
+        '\xad': '\u1F80', //  greek small letter alpha with psili and ypogegrammeni
+        '\xae': '\u1FB4', //  greek small letter alpha with oxia and ypogegrammeni
+        '\xaf': '\u1F85', //  greek small letter alpha with dasia and oxia and ypogegrammeni
+        '\xb0': '\u1F84', //  greek small letter alpha with psili and oxia and ypogegrammeni
+        '\xb1': '\u1FB2', //  greek small letter alpha with varia and ypogegrammeni
+        '\xb2': '\u1F83', //  greek small letter alpha with dasia and varia and ypogegrammeni
+        '\xb3': '\u1F82', //  greek small letter alpha with psili and varia and ypogegrammeni
+        '\xb4': '\u1FB7', //  greek small letter alpha with perispomeni and ypogegrammeni
+        '\xb5': '\u1F87', //  greek small letter alpha with dasia and perispomeni and ypogegrammeni
+        '\xb6': '\u1F86', //  greek small letter alpha with psili and perispomeni and ypogegrammeni
+        '\xb7': '\u1FE5', //  greek small letter rho with dasia
+        '\xb8': '\u1FE4', //  greek small letter rho with psili
+        '\xb9': '\u1F21', //  greek small letter eta with dasia
+        '\xba': '\u1F20', //  greek small letter eta with psili
+        '\xbb': '\u1F75', //  greek small letter eta with oxia
+        '\xbc': '\u1F25', //  greek small letter eta with dasia and oxia
+        '\xbd': '\u1F24', //  greek small letter eta with psili and oxia
+        '\xbe': '\u1F74', //  greek small letter eta with varia
+        '\xbf': '\u1F23', //  greek small letter eta with dasia and varia
+        '\xc0': '\u1F22', //  greek small letter eta with psili and varia
+        '\xc1': '\u1FC6', //  greek small letter eta with perispomeni
+        '\xc2': '\u1F27', //  greek small letter eta with dasia and perispomeni
+        '\xc3': '\u1F26', //  greek small letter eta with psili and perispomeni
+        '\xc4': '\u037A', //  greek ypogegrammeni
+        '\xc5': '\u1F91', //  greek small letter eta with dasia and ypogegrammeni
+        '\xc6': '\u1F90', //  greek small letter eta with psili and ypogegrammeni
+        '\xc7': '\u1FC4', //  greek small letter eta with oxia and ypogegrammeni
+        '\xc8': '\u1F95', //  greek small letter eta with dasia and oxia and ypogegrammeni
+        '\xc9': '\u1F94', //  greek small letter eta with psili and oxia and ypogegrammeni
+        '\xca': '\u1FC2', //  greek small letter eta with varia and ypogegrammeni
+        '\xcb': '\u1F93', //  greek small letter eta with dasia and varia and ypogegrammeni
+        '\xcc': '\u1F92', //  greek small letter eta with psili and varia and ypogegrammeni
+        '\xcd': '\u1FC7', //  greek small letter eta with perispomeni and ypogegrammeni
+        '\xce': '\u1F97', //  greek small letter eta with dasia and perispomeni and ypogegrammeni
+        '\xcf': '\u1F96', //  greek small letter eta with psili and perispomeni and ypogegrammeni
+        '\xd0': '\u1F41', //  greek small letter omicron with dasia
+        '\xd1': '\u1F40', //  greek small letter omicron with psili
+        '\xd2': '\u1F79', //  greek small letter omicron with oxia
+        '\xd3': '\u1F45', //  greek small letter omicron with dasia and oxia
+        '\xd4': '\u1F44', //  greek small letter omicron with psili and oxia
+        '\xd5': '\u1F78', //  greek small letter omicron with varia
+        '\xd6': '\u1F43', //  greek small letter omicron with dasia and varia
+        '\xd7': '\u1F42', //  greek small letter omicron with psili and varia
+        '\xd8': '\u1F51', //  greek small letter upsilon with dasia
+        '\xd9': '\u1F50', //  greek small letter upsilon with psili
+        '\xda': '\u1F7B', //  greek small letter upsilon with oxia
+        '\xdb': '\u1F55', //  greek small letter upsilon with dasia and oxia
+        '\xdc': '\u1F54', //  greek small letter upsilon with psili and oxia
+        '\xdd': '\u1F7A', //  greek small letter upsilon with varia
+        '\xde': '\u1F53', //  greek small letter upsilon with dasia and varia
+        '\xdf': '\u1F52', //  greek small letter upsilon with psili and varia
+        '\xe0': '\u1FE6', //  greek small letter upsilon with perispomeni
+        '\xe1': '\u1F57', //  greek small letter upsilon with dasia and perispomeni
+        '\xe2': '\u1F56', //  greek small letter upsilon with psili and perispomeni
+        '\xe3': '\u03CB', //  greek small letter upsilon with dialytika
+        '\xe4': '\u1FE3', //  greek small letter upsilon with dialytika and oxia
+        '\xe5': '\u1FE2', //  greek small letter upsilon with dialytika and varia
+        '\xe6': '\u1F61', //  greek small letter omega with dasia
+        '\xe7': '\u1F60', //  greek small letter omega with psili
+        '\xe8': '\u1F7D', //  greek small letter omega with oxia
+        '\xe9': '\u1F65', //  greek small letter omega with dasia and oxia
+        '\xea': '\u1F64', //  greek small letter omega with psili and oxia
+        '\xeb': '\u1F7C', //  greek small letter omega with varia
+        '\xec': '\u1F63', //  greek small letter omega with dasia and varia
+        '\xed': '\u1F62', //  greek small letter omega with psili and varia
+        '\xee': '\u1FF6', //  greek small letter omega with perispomeni
+        '\xef': '\u1F67', //  greek small letter omega with dasia and perispomeni
+        '\xf0': '\u1F66', //  greek small letter omega with psili and perispomeni
+        '\xf1': '\u1FA1', //  greek small letter omega with dasia and ypogegrammeni
+        '\xf2': '\u1FA0', //  greek small letter omega with psili and ypogegrammeni
+        '\xf3': '\u1FF4', //  greek small letter omega with oxia and ypogegrammeni
+        '\xf4': '\u1FA5', //  greek small letter omega with dasia and oxia and ypogegrammeni
+        '\xf5': '\u1FA4', //  greek small letter omega with psili and oxia and ypogegrammeni
+        '\xf6': '\u1FF2', //  greek small letter omega with varia and ypogegrammeni
+        '\xf7': '\u1FA3', //  greek small letter omega with dasia and varia and ypogegrammeni
+        '\xf8': '\u1FA2', //  greek small letter omega with psili and varia and ypogegrammeni
+        '\xf9': '\u1FF7', //  greek small letter omega with perispomeni and ypogegrammeni
+        '\xfa': '\u1FA7', //  greek small letter omega with dasia and perispomeni and ypogegrammeni
+        '\xfb': '\u1FA6', //  greek small letter omega with psili and perispomeni and ypogegrammeni
+        '\xfc': -1, // greek small letter epsilon with perispomeni
+        '\xfd': -2 // greek small letter omicron with perispomeni
     },
         ansi_conversion = {
             '\u20ac': '\x80', // oxia

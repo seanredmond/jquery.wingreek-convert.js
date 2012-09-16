@@ -29,7 +29,7 @@
         '\x22': '\u03E0', //  greek letter sampi
         '\x23': '\u03DC', //  greek letter digamma
         '\x24': '\u03DA', //  greek letter stigma
-        '\x25': '\u03DE', //  greek letter koppa
+        '\x25': '\u03D8', //  greek letter archaic koppa
         '\x26': '\u03F2', //  greek lunate sigma symbol
         '\x27': '\u1FBF', //  greek psili
         '\x2b': '\u203B', //  reference mark

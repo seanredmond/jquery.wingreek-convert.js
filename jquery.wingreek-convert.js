@@ -330,9 +330,9 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x21-\x27\x2b\x3a-\x3b\x3d\x40A-Za-z\x5f-\x60\x7e\x81\x8d\x8f-\x90\x9d\xa1-\xab\xad-\xf9\xfa-\xfe])/, [RE_LETTER]],
-            [/^([\s\.\(\),\-\.\/0-9\<\>\[\\\]\{\|\}])/, [RE_PASSTHRU]],
-            [/^([\u0152-\u0153\u0160\u0161\u0178\u017d-\u017e\u0192\u02c6\u20ac\u02dc\u2013-\u2014\u2018-\u2021\u201a\u201c-\u201e\u2022\u2026\u2030\u2039\u203a\u2122])/, [RE_ANSI_CONV]]
+            [/^([\x22\x23\x25A-Za-z])/, [RE_LETTER]],
+            [/^([\s])/, [RE_PASSTHRU]],
+            [/^([\u0152])/, [RE_ANSI_CONV]]
         ],
         RX_DIAC = '[\u1FBF\u1FC0\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FEF\u1FFD\u1FFE]',
         RX_CAPVOWELS = '[\u0391\u0395\u0397\u0399\u039F\u03A1\u03A5\u03A9]', 

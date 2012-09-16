@@ -212,45 +212,43 @@
         '\xf9': '\u1FF7', //  greek small letter omega with perispomeni and ypogegrammeni
         '\xfa': '\u1FA7', //  greek small letter omega with dasia and perispomeni and ypogegrammeni
         '\xfb': '\u1FA6', //  greek small letter omega with psili and perispomeni and ypogegrammeni
-        '\xfc': -1, // greek small letter epsilon with perispomeni
-        '\xfd': -2 // greek small letter omicron with perispomeni
+        '\xfc': '\u1FB5', // greek small letter epsilon with perispomeni
+        '\xfd': '\u1FC5'  // greek small letter omicron with perispomeni
     },
         ansi_conversion = {
-            '\u20ac': '\x80', // oxia
-            // no mapping 0x0081   varia
-            // no mapping 0x0082   perispomeni
-            '\u0192': '\x83', // psili
-            '\u201e': '\x84', // dasia
-            '\u2026': '\x85', // psili & oxia
-            '\u2020': '\x86', // dasia & oxia
-            '\u2021': '\x87', // psili & varia
-            '\u02c6': '\x88', // dasia & varia
-            '\u2030': '\x89', // psili & perispomeni
-            '\u0160': '\x8a', // dasia & perispomeni
-
-
-            '\u2039': '\x8b', // small alpha w/ oxia
-            '\u0152': '\x8c', // small alpha w/ varia
-            // no mapping 0x008d   small alpha w/ perispomeni
-            '\u017d': '\x8e', // small alpha w/ psili
-            // no mapping 0x008f   small alpha w/ dasia
-            // no mapping 0x0090   small alpha w/ psili & oxia
-            '\u2018': '\x91', // small alpha w/ dasia & oxia
-            '\u2019': '\x92', // small alpha w/ psili & varia
-            '\u201a': '\x82', // small alpha w/ dasia & varia
-            '\u201c': '\x93', // small alpha w/ dasia & varia
-            '\u201d': '\x94', // small alpha w/ psili & perispomeni
-            '\u2022': '\x95', // small alpha w/ dasia & perispomeni
-            '\u2013': '\x96', // small alpha w/ oxia & ypogegrammeni
-            '\u2014': '\x97', // small alpha w/ varia & ypogegrammeni
-            '\u02dc': '\x98', // small alpha w/ perispomeni & ypogegrammeni
-            '\u2122': '\x99', // small alpha w/ psili & ypogegrammeni
-            '\u0161': '\x9a', // small alpha w/ dasia & ypogegrammeni
-            '\u203a': '\x9b', // small alpha w/ psili & oxia & ypogegrammeni
-            '\u0153': '\x9c', // small alpha w/ dasia & oxia & ypogegrammeni
-            // no mapping 0x009d   small alpha w/ psili & varia & ypogegrammeni
-            '\u017e': '\x9e', // small alpha w/ dasia & varia & ypogegrammeni
-            '\u0178': '\x9f' // small alpha w/ psili & perispomeni & ypogegrammeni
+            // '\u20ac': '\x80', // oxia
+            // // no mapping 0x0081   varia
+            // // no mapping 0x0082   perispomeni
+            '\u0192': '\x83', // greek small letter iota with dasia
+            '\u201e': '\x84', // greek small letter iota with psili
+            '\u2026': '\x85', // greek small letter iota with oxia
+            '\u2020': '\x86', // greek small letter iota with dasia and oxia
+            '\u2021': '\x87', // greek small letter iota with psili and oxia
+            '\u02c6': '\x88', // greek small letter iota with varia
+            '\u2030': '\x89', // greek small letter iota with dasia and varia
+            '\u0160': '\x8a', // greek small letter iota with psili and varia
+            '\u2039': '\x8b', // greek small letter iota with perispomeni
+            '\u0152': '\x8c', // greek small letter iota with dasia and perispomeni
+            // no mapping 0x008d   greek small letter iota with psili and perispomeni
+            '\u017d': '\x8e', // greek small letter iota with dialytika
+            // no mapping 0x008f   greek small letter iota with dialytika and oxia
+            // no mapping 0x0090   greek small letter iota with dialytika and varia
+            // '\u2018': '\x91', // small alpha w/ dasia & oxia
+            // '\u2019': '\x92', // small alpha w/ psili & varia
+            // '\u201a': '\x82', // small alpha w/ dasia & varia
+            // '\u201c': '\x93', // small alpha w/ dasia & varia
+            // '\u201d': '\x94', // small alpha w/ psili & perispomeni
+            // '\u2022': '\x95', // small alpha w/ dasia & perispomeni
+            // '\u2013': '\x96', // small alpha w/ oxia & ypogegrammeni
+            // '\u2014': '\x97', // small alpha w/ varia & ypogegrammeni
+            '\u02dc': '\x98', // greek small letter epsilon with dasia
+            '\u2122': '\x99', // greek small letter epsilon with psili
+            '\u0161': '\x9a', // greek small letter epsilon with oxia
+            '\u203a': '\x9b', // greek small letter epsilon with dasia and oxia
+            '\u0153': '\x9c', // greek small letter epsilon with psili and oxia
+            // no mapping 0x009d   greek small letter epsilon with varia
+            '\u017e': '\x9e', // greek small letter epsilon with dasia and varia
+            '\u0178': '\x9f'  // greek small letter epsilon with psili and varia
         },
         combinations = {
             '\u1FFD\u0391': '\u1FBB', // capital alpha w/ oxia
@@ -330,9 +328,9 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x22\x23\x25A-Za-z])/, [RE_LETTER]],
+            [/^([\x22\x23\x25A-Za-z\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xfd])/, [RE_LETTER]],
             [/^([\s])/, [RE_PASSTHRU]],
-            [/^([\u0152])/, [RE_ANSI_CONV]]
+            [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u201e\u2020\u2021\u2026\u2030\u2039\u203a\u2122])/, [RE_ANSI_CONV]]
         ],
         RX_DIAC = '[\u1FBF\u1FC0\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FEF\u1FFD\u1FFE]',
         RX_CAPVOWELS = '[\u0391\u0395\u0397\u0399\u039F\u03A1\u03A5\u03A9]', 
@@ -381,7 +379,7 @@
                 });
 
                 if (match === null) {
-                    $.error('Invalid character \"' + wingreek[0] + '\" (' + wingreek[0].charCodeAt(0) + ')');
+                    $.error('Invalid character \"' + wingreek[0] + '\" (' + wingreek[0].charCodeAt(0).toString(16) + ')');
                 }
 
                 return greek +

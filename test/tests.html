@@ -24,43 +24,49 @@
     test("Alphas with diacriticals", function() {
         var greek = $('#alphas');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ᾳάὰᾶἀ ἁἄἅἂἃ ἆἇᾴᾲᾷ ᾀᾁᾄᾅᾂ ᾃᾆᾇ");
+        equal(greek.text(), "ἁἀάἅἄ ὰἃἂᾶἇ ἆᾁᾀᾴᾅ ᾄᾲᾃᾂᾷ ᾇᾆ");
     });
 
     test("Epsilons with diacriticals", function() {
         var greek = $('#epsilons');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "έὲἐἑἔ ἕἒἓ");
+        strictEqual(greek.text(), "ἑἐέἕἔ ὲἓἒ᾵");
     });
 
     test("Etas with diacriticals", function() {
         var greek = $('#etas');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "ήὴῆἠἡ ἤἥἢἣἦ ἧῄῂῇᾐ ᾑᾔᾕᾒᾓ ᾖᾗῃ");
+        strictEqual(greek.text(), "ῃἡἠήἥ ἤὴἣἢῆ ἧἦᾑᾐῄ ᾕᾔῂᾓᾒ ῇᾗᾖ");
     });
 
     test("Iotas with diacriticals", function() {
         var greek = $('#iotas');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ίὶῖἰἱ ἴἵἲἳἶ ἷϊΐῒ");
+        equal(greek.text(), "ἱἰίἵἴ ὶἳἲῖἷ ἶϊΐῒ");
     });
 
     test("Omicrons with diacriticals", function() {
         var greek = $('#omicrons');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "όὸὀὁὄ ὅὂὃ");
+        equal(greek.text(), "ὁὀόὅὄ ὸὃὂ῅");
     });
 
     test("Upsilons with diacriticals", function() {
         var greek = $('#upsilons');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ϋῢύὺῦ ὐὑὔὕὒ ὓὖὗ");
+        equal(greek.text(), "ὑὐύὕ ὔὺὓὒῦ ὗὖϋΰῢ");
     });
     
     test("Omegas with diacriticals", function() {
         var greek = $('#omegas');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "ῳώὼῶὠ ὡὤὥὢὣ ὦὧῴῲῷ ᾠᾡᾤᾥᾢ ᾣᾦᾧ");
+        strictEqual(greek.text(), "ὡὠώὥὤ ὼὣὢῶὧ ὦᾡᾠῴᾥ ᾤῲᾣᾢῷ ᾧᾦ");
+    });
+
+    test("Rhos with diacriticals", function() {
+        var greek = $('#rhos');
+        greek.wingreek2utf8('convert');
+        strictEqual(greek.text(), "ῥῤ");
     });
 
     test("Bare diacritical symbols", function() {
@@ -165,20 +171,21 @@
         
         <p id="lc-no-diacriticals">abgde zhqik lmnxo prstu fcyw j&#x25;</p>
         
-        <p id="alphas">&#x26;&#x8b;&#x8c;&#x8d;&#x8e; &#x8f;&#x90;&#x91;&#x92;&#x93; &#x94;&#x95;&#x96;&#x97;&#x98; &#x99;&#x9a;&#x9b;&#x9c;&#x9d; &#x9e;&#x9f;&#xaa;</p>
+        <p id="alphas">&#xa1;&#xa2;&#xa3;&#xa4;&#xa5; &#xa6;&#xa7;&#xa8;&#xa9;&#xaa; &#xab;&#xac;&#xad;&#xae;&#xaf; &#xb0;&#xb1;&#xb2;&#xb3;&#xb4; &#xb5;&#xb6;</p>
+
+        <p id="epsilons">&#x98;&#x99;&#x9a;&#x9b;&#x9c; &#x9d;&#x9e;&#x9f;&#xfc;</p>
+
+        <p id="etas">&#x56;&#xb9;&#xba;&#xbb;&#xbc; &#xbd;&#xbe;&#xbf;&#xc0;&#xc1; &#xc2;&#xc3;&#xc5;&#xc6;&#xc7; &#xc8;&#xc9;&#xca;&#xcb;&#xcc; &#xcd;&#xce;&#xcf;</p>
+
+        <p id="iotas">&#x83;&#x84;&#x85;&#x86;&#x87; &#x88;&#x89;&#x8a;&#x8b;&#x8c; &#x8d;&#x8e;&#x8f;&#x90;</p>
+
+        <p id="omicrons">&#xd0;&#xd1;&#xd2;&#xd3;&#xd4; &#xd5;&#xd6;&#xd7;&#xfd;</p>
+
+        <p id="upsilons">&#xd8;&#xd9;&#xda;&#xdb; &#xdc;&#xdd;&#xde;&#xdf;&#xe0; &#xe1;&#xe2;&#xe3;&#xe4;&#xe5;</p>
         
+        <p id="omegas">&#xe6;&#xe7;&#xe8;&#xe9;&#xea; &#xeb;&#xec;&#xed;&#xee;&#xef; &#xf0;&#xf1;&#xf2;&#xf3;&#xf4; &#xf5;&#xf6;&#xf7;&#xf8;&#xf9; &#xfa;&#xfb;</p>
 
-        <p id="epsilons">&#xa1;&#xa2;&#xa4;&#xa5;&#xa6; &#xa7;&#xa8;&#xa9;</p>
-
-        <p id="etas">&#xae;&#xaf;&#xb0;&#xb1;&#xb2; &#xb3;&#xb4;&#xb5;&#xb6;&#xb7; &#xb8;&#xb9;&#xba;&#xbb;&#xbc; &#xbd;&#xbe;&#xbf;&#xc0;&#xc1; &#xc2;&#xc3;&#xfa;</p>
-
-        <p id="iotas">&#xdb;&#xdc;&#xdd;&#xde;&#xdf; &#xe0;&#xe1;&#xe2;&#xe3;&#xe4; &#xe5;&#xf3;&#xfd;&#xfe;</p>
-
-        <p id="omicrons">&#xf1;&#xf2;&#xf4;&#xf5;&#xf6; &#xf7;&#xf8;&#xf9;</p>
-
-        <p id="upsilons">#&#xa3;&#xe6;&#xe7;&#xe8; &#xe9;&#xea;&#xeb;&#xec;&#xed; &#xee;&#xef;&#xf0;</p>
-        
-        <p id="omegas">&#xc4;&#xc5;&#xc6;&#xc7;&#xc8; &#xc9;&#xca;&#xcb;&#xcc;&#xcd; &#xce;&#xcf;&#xd0;&#xd1;&#xd2; &#xd3;&#xd4;&#xd5;&#xd6;&#xd7; &#xd8;&#xd9;&#xda;</p>
+        <p id="rhos">&#xb7;&#xb8;</p>
 
         <p id="bare-diacrits">&#x80;&#x81;&#x82;&#x83;&#x84; &#x85;&#x86;&#x87;&#x88;&#x89; &#x8a;</p>
 

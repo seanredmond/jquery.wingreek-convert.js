@@ -1,22 +1,22 @@
 /*
- * jQuery GreekKeys Converter: jQuery plugin to convert GreekKeys to Unicode
+ * jQuery WinGreek Converter: jQuery plugin to convert WinGreek to Unicode
  *
  * © 2012 Sean Redmond.
  *
- * This file is part of jQuery GreekKeys Converter.
+ * This file is part of jQuery WinGreek Converter.
  * 
- * jQuery GreekKeys Converter is free software: you can redistribute it and/or
+ * jQuery WinGreek Converter is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or (at your
  * option) any later version.
  * 
- * jQuery GreekKeys Converter is distributed in the hope that it will be 
+ * jQuery WinGreek Converter is distributed in the hope that it will be 
  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General 
  * Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License along
- * w/ jQuery GreekKeys Converter.  If not, see 
+ * w/ jQuery WinGreek Converter.  If not, see 
  * <http://www.gnu.org/licenses/>.
  */
 
@@ -348,16 +348,16 @@
                 });
             },
 
-            _atoms: function (greekkeys) {
+            _atoms: function (wingreek) {
                 var match = null,
                     greek;
 
-                if (!greekkeys) {
+                if (!wingreek) {
                     return '';
                 }
 
                 $.each(regexes, function (i, re) {
-                    match = re[0].exec(greekkeys);
+                    match = re[0].exec(wingreek);
                     if (match) {
                         var letter;
                         if (re[1][0] === RE_LETTER) {
@@ -384,12 +384,12 @@
                 });
 
                 if (match === null) {
-                    $.error('Invalid character \"' + greekkeys[0] + '\" (' + greekkeys[0].charCodeAt(0) + ')');
+                    $.error('Invalid character \"' + wingreek[0] + '\" (' + wingreek[0].charCodeAt(0) + ')');
                 }
 
                 return greek +
                     methods._atoms(
-                        greekkeys.substring(match.index + match[0].length)
+                        wingreek.substring(match.index + match[0].length)
                     );
             },
 
@@ -424,13 +424,13 @@
                             console.log(e.message + ' in ' + n.data);
                         }
                     } else {
-                        $(n).greekkeys2utf8('convert', options);
+                        $(n).wingreek2utf8('convert', options);
                     }
                 });
             }
         };
 
-    $.fn.greekkeys2utf8 = function (method) {
+    $.fn.wingreek2utf8 = function (method) {
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         }
@@ -439,7 +439,7 @@
             return methods.init.apply(this, arguments);
         }
 
-        $.error('Method ' +  method + ' does not exist on jQuery.greekkeys2utf8');
+        $.error('Method ' +  method + ' does not exist on jQuery.wingreek2utf8');
     };
 }(jQuery));
 

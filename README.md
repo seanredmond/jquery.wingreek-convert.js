@@ -1,4 +1,4 @@
-jquery.greekkeys-convert.js
+jquery.wingreek-convert.js
 ===========================
 
-jQuery plugin for converting GreekKeys to Unicode
+jQuery plugin for converting WinGreek to Unicode

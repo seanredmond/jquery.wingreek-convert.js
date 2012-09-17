@@ -216,6 +216,8 @@
         '\xfb': '\u1FA6', //  greek small letter omega with psili and perispomeni and ypogegrammeni
         '\xfc': '\u1FB5', // greek small letter epsilon with perispomeni
         '\xfd': '\u1FC5'  // greek small letter omicron with perispomeni
+        '\xfe': '\u11FED' // greek dialytika and oxia
+        '\xff': '\u0317'  // combining acute accent below
     },
         ansi_conversion = {
             '\u20ac': '\x80', // left-pointing double angle quotation mark
@@ -330,7 +332,7 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x21-\x25\x27\x2b\x2f\x3a\x3b\x40A-Z\x5c\x5e\x60a-z\x80\x81\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xfd])/, [RE_LETTER]],
+            [/^([\x21-\x25\x27\x2b\x2f\x3a\x3b\x40A-Z\x5c\x5e\x60a-z\x80\x81\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xff])/, [RE_LETTER]],
             [/^([\s\(\)\*\,\-\.\<\=\>\?\[\]\_\{\|\}\~])/, [RE_PASSTHRU]],
             [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018\u2019\u201c-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122])/, [RE_ANSI_CONV]]
         ],

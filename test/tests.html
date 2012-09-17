@@ -30,7 +30,7 @@
     test("Epsilons with diacriticals", function() {
         var greek = $('#epsilons');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "ἑἐέἕἔ ὲἓἒ᾵");
+        strictEqual(greek.text(), "ἑἐέἕἔ ὲἓἒε͂");
     });
 
     test("Etas with diacriticals", function() {
@@ -42,19 +42,19 @@
     test("Iotas with diacriticals", function() {
         var greek = $('#iotas');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ἱἰίἵἴ ὶἳἲῖἷ ἶϊΐῒ");
+        equal(greek.text(), "ἱἰίἵἴ ὶἳἲῖἷ ἶϊΐῒῑ");
     });
 
     test("Omicrons with diacriticals", function() {
         var greek = $('#omicrons');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ὁὀόὅὄ ὸὃὂ῅");
+        equal(greek.text(), "ὁὀόὅὄ ὸὃὂο͂");
     });
 
     test("Upsilons with diacriticals", function() {
         var greek = $('#upsilons');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ὑὐύὕ ὔὺὓὒῦ ὗὖϋΰῢ");
+        equal(greek.text(), "ὑὐύὕ ὔὺὓὒῦ ὗὖϋΰῢῡ");
     });
     
     test("Omegas with diacriticals", function() {
@@ -84,7 +84,7 @@
     test("Unconverted characters", function() {
         var greek = $('#pass-thru');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), " (),- ./012 34567 89<>[ \\]{|}");
+        strictEqual(greek.text(), " (),- .´012 34567 89<>[ `]{|}");
     });
 
     test("Capitals combined with acute", function () {
@@ -171,11 +171,11 @@
 
         <p id="etas">&#x56;&#xb9;&#xba;&#xbb;&#xbc; &#xbd;&#xbe;&#xbf;&#xc0;&#xc1; &#xc2;&#xc3;&#xc5;&#xc6;&#xc7; &#xc8;&#xc9;&#xca;&#xcb;&#xcc; &#xcd;&#xce;&#xcf;</p>
 
-        <p id="iotas">&#x83;&#x84;&#x85;&#x86;&#x87; &#x88;&#x89;&#x8a;&#x8b;&#x8c; &#x8d;&#x8e;&#x8f;&#x90;</p>
+        <p id="iotas">&#x83;&#x84;&#x85;&#x86;&#x87; &#x88;&#x89;&#x8a;&#x8b;&#x8c; &#x8d;&#x8e;&#x8f;&#x90;&#xfe;</p>
 
         <p id="omicrons">&#xd0;&#xd1;&#xd2;&#xd3;&#xd4; &#xd5;&#xd6;&#xd7;&#xfd;</p>
 
-        <p id="upsilons">&#xd8;&#xd9;&#xda;&#xdb; &#xdc;&#xdd;&#xde;&#xdf;&#xe0; &#xe1;&#xe2;&#xe3;&#xe4;&#xe5;</p>
+        <p id="upsilons">&#xd8;&#xd9;&#xda;&#xdb; &#xdc;&#xdd;&#xde;&#xdf;&#xe0; &#xe1;&#xe2;&#xe3;&#xe4;&#xe5;&#xff;</p>
         
         <p id="omegas">&#xe6;&#xe7;&#xe8;&#xe9;&#xea; &#xeb;&#xec;&#xed;&#xee;&#xef; &#xf0;&#xf1;&#xf2;&#xf3;&#xf4; &#xf5;&#xf6;&#xf7;&#xf8;&#xf9; &#xfa;&#xfb;</p>
 

@@ -215,8 +215,8 @@
         '\xfa': '\u1FA7', //  greek small letter omega with dasia and perispomeni and ypogegrammeni
         '\xfb': '\u1FA6', //  greek small letter omega with psili and perispomeni and ypogegrammeni
         '\xfc': '\u1FB5', // greek small letter epsilon with perispomeni
-        '\xfd': '\u1FC5'  // greek small letter omicron with perispomeni
-        '\xfe': '\u11FED' // greek dialytika and oxia
+        '\xfd': '\u1FC5', // greek small letter omicron with perispomeni
+        '\xfe': '\u1FED', // greek dialytika and oxia
         '\xff': '\u0317'  // combining acute accent below
     },
         ansi_conversion = {

@@ -12,7 +12,7 @@
     test("Uppercase Letters without diacriticals", function() {
         var greek = $('#uc-no-diacriticals');
         greek.wingreek2utf8('convert');
-        equal(greek.text(), "ΑΒΓΔΕ ΖΗΘΙΚ ΛΜΝΞΟ ΠΡΣΤΥ ΦΧΨΩ ϜϠ");
+        equal(greek.text(), "ΑΒΓΔΕ ΖΗΘΙΚ ΛΜΝΞΟ ΠΡΣΤΥ ΦΧΨΩ ϜϠϚ");
     });
 
     test("Lowercase Letters without diacriticals", function() {
@@ -72,25 +72,19 @@
     test("Bare diacritical symbols", function() {
         var greek = $('#bare-diacrits');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "´`῀᾿῾ ῎῞῍῝῏ ῟");
+        strictEqual(greek.text(), "᾿´¨`῀ ῾῟῏῞῎ ῝῍΅ͺ");
     });
 
     test("Other symbols", function() {
         var greek = $('#other');
         greek.wingreek2utf8('convert');
-        strictEqual(greek.text(), "ϲ”ϋ⌊Ϲ ’ι·;ῥ ΰ⟦̣†⟧ ˘Ϛ⌋");
+        strictEqual(greek.text(), "↙※·«»");
     });
 
     test("Unconverted characters", function() {
         var greek = $('#pass-thru');
         greek.wingreek2utf8('convert');
         strictEqual(greek.text(), " (),- ./012 34567 89<>[ \\]{|}");
-    });
-
-    test("Herodotus 1.1.1", function () {
-        var greek = $('#herodotus');
-        greek.wingreek2utf8('convert');
-        equal(greek.text(), "Περσέων μέν νυν οἱ λόγιοι Φοίνικας αἰτίους φασί γενέσθαι τῆς διαφορῆς.");
     });
 
     test("Capitals combined with acute", function () {
@@ -166,7 +160,7 @@
     <div id="qunit"></div>
     <div id="qunit-fixture">
         <div>
-            <p id="uc-no-diacriticals">ABGDE ZHQIK LMNXO PRSTU FCYW &#x23;&#x22;</p>
+            <p id="uc-no-diacriticals">ABGDE ZHQIK LMNXO PRSTU FCYW &#x23;&#x22;&#x24;</p>
         </div>
         
         <p id="lc-no-diacriticals">abgde zhqik lmnxo prstu fcyw j&#x25;</p>
@@ -187,33 +181,31 @@
 
         <p id="rhos">&#xb7;&#xb8;</p>
 
-        <p id="bare-diacrits">&#x80;&#x81;&#x82;&#x83;&#x84; &#x85;&#x86;&#x87;&#x88;&#x89; &#x8a;</p>
+        <p id="bare-diacrits">&#x27;&#x2f;&#x40;&#x5c;&#x5e; &#x60;&#x91;&#x92;&#x93;&#x94; &#x95;&#x96;&#x97;&#xc4;</p>
 
-        <p id="other">&#x21;&#x22;&#x23;&#x24;&#x25; &#x27;&#x2b;&#x3a;&#x3b;&#x3d; &#x40;&#x5f;&#x60;&#x7e;&#xab; &#xad;&#xfb;&#xfc;</p>
+        <p id="other">&#x21;&#x2b;&#x3a;&#x80;&#x81;</p>
 
         <p id="pass-thru"> (),- ./012 34567 89&#x3c;&#x3e;[ \]{|}</p>
 
-        <p id='herodotus'>Pers¡vn m¡n nun oß lñgioi FoÛnikaw aÞtÛouw fasÛ gen¡syai t°w diafor°w.</p>
+        <p id='combined-cap-acute'>&#x2f;A&#x2f;E&#x2f;H&#x2f;I&#x2f;O&#x2f;U&#x2f;W</p>
 
-        <p id='combined-cap-acute'>&#x80;A&#x80;E&#x80;H&#x80;I&#x80;O&#x80;U&#x80;V</p>
+        <p id='combined-cap-grave'>&#x5c;A&#x5c;E&#x5c;H&#x5c;I&#x5c;O&#x5c;U&#x5c;W</p>
 
-        <p id='combined-cap-grave'>&#x81;A&#x81;E&#x81;H&#x81;I&#x81;O&#x81;U&#x81;V</p>
+        <p id='combined-cap-smooth'>&#x27;A&#x27;E&#x27;H&#x27;I&#x27;O&#x27;W</p>
 
-        <p id='combined-cap-smooth'>&#x83;A&#x83;E&#x83;H&#x83;I&#x83;O&#x83;V</p>
+        <p id='combined-cap-rough'>&#x60;A&#x60;E&#x60;H&#x60;I&#x60;O&#x60;R&#x60;U&#x60;W</p>
 
-        <p id='combined-cap-rough'>&#x84;A&#x84;E&#x84;H&#x84;I&#x84;O&#x84;R&#x84;U&#x84;V</p>
+        <p id='combined-cap-rough-circumflex'>&#x91;A&#x91;H&#x91;I&#x91;U&#x91;W</p>
 
-        <p id='combined-cap-smooth-acute'>&#x85;A&#x85;E&#x85;H&#x85;I&#x85;O&#x85;V</p>
+        <p id='combined-cap-smooth-circumflex'>&#x92;A&#x92;H&#x92;I&#x92;W</p>
 
-        <p id='combined-cap-rough-acute'>&#x86;A&#x86;E&#x86;H&#x86;I&#x86;O&#x86;U&#x86;V</p>
+        <p id='combined-cap-rough-acute'>&#x93;A&#x93;E&#x93;H&#x93;I&#x93;O&#x93;U&#x93;W</p>
 
-        <p id='combined-cap-smooth-grave'>&#x87;A&#x87;E&#x87;H&#x87;I&#x87;O&#x87;V</p>
+        <p id='combined-cap-smooth-acute'>&#x94;A&#x94;E&#x94;H&#x94;I&#x94;O&#x94;W</p>
 
-        <p id='combined-cap-rough-grave'>&#x88;A&#x88;E&#x88;H&#x88;I&#x88;O&#x88;U&#x88;V</p>
+        <p id='combined-cap-rough-grave'>&#x95;A&#x95;E&#x95;H&#x95;I&#x95;O&#x95;U&#x95;W</p>
 
-        <p id='combined-cap-smooth-circumflex'>&#x89;A&#x89;H&#x89;I&#x89;V</p>
-
-        <p id='combined-cap-rough-circumflex'>&#x8a;A&#x8a;H&#x8a;I&#x8a;U&#x8a;V</p>
+        <p id='combined-cap-smooth-grave'>&#x96;A&#x96;E&#x96;H&#x96;I&#x96;O&#x96;W</p>
     </div>
 </body>
 </html>

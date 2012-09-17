@@ -36,7 +36,7 @@
         '\x2f': '\u1FFD', //  greek oxia
         '\x3a': '\u0387', //  greek ano teleia
         '\x3b': '\u037E', //  greek question mark
-        '\x40': '\u0776', //  diaeresis
+        '\x40': '\u00A8', //  diaeresis
         '\x41': '\u0391', //  greek capital letter alpha
         '\x42': '\u0392', //  greek capital letter beta
         '\x43': '\u03A7', //  greek capital letter chi
@@ -92,6 +92,8 @@
         '\x78': '\u03BE', //  greek small letter xi
         '\x79': '\u03C8', //  greek small letter psi
         '\x7a': '\u03B6', //  greek small letter zeta
+        '\x80': '\u00ab', //  left-pointing double angle quotation mark
+        '\x81': '\u00bb', //  right-pointing double angle quotation mark
         '\x83': '\u1F31', //  greek small letter iota with dasia
         '\x84': '\u1F30', //  greek small letter iota with psili
         '\x85': '\u1F77', //  greek small letter iota with oxia
@@ -216,9 +218,10 @@
         '\xfd': '\u1FC5'  // greek small letter omicron with perispomeni
     },
         ansi_conversion = {
-            // '\u20ac': '\x80', // oxia
+            '\u20ac': '\x80', // left-pointing double angle quotation mark
             // // no mapping 0x0081   varia
             // // no mapping 0x0082   perispomeni
+            // '\u201a': '\x82', // small alpha w/ dasia & varia
             '\u0192': '\x83', // greek small letter iota with dasia
             '\u201e': '\x84', // greek small letter iota with psili
             '\u2026': '\x85', // greek small letter iota with oxia
@@ -233,14 +236,13 @@
             '\u017d': '\x8e', // greek small letter iota with dialytika
             // no mapping 0x008f   greek small letter iota with dialytika and oxia
             // no mapping 0x0090   greek small letter iota with dialytika and varia
-            // '\u2018': '\x91', // small alpha w/ dasia & oxia
-            // '\u2019': '\x92', // small alpha w/ psili & varia
-            // '\u201a': '\x82', // small alpha w/ dasia & varia
-            // '\u201c': '\x93', // small alpha w/ dasia & varia
-            // '\u201d': '\x94', // small alpha w/ psili & perispomeni
-            // '\u2022': '\x95', // small alpha w/ dasia & perispomeni
-            // '\u2013': '\x96', // small alpha w/ oxia & ypogegrammeni
-            // '\u2014': '\x97', // small alpha w/ varia & ypogegrammeni
+            '\u2018': '\x91', // greek dasia and perispomeni
+            '\u2019': '\x92', // greek psili and perispomeni
+            '\u201c': '\x93', // greek dasia and oxia
+            '\u201d': '\x94', // greek psili and oxia
+            '\u2022': '\x95', // greek dasia and varia
+            '\u2013': '\x96', // greek psili and varia
+            '\u2014': '\x97', // greek dialytika and oxia
             '\u02dc': '\x98', // greek small letter epsilon with dasia
             '\u2122': '\x99', // greek small letter epsilon with psili
             '\u0161': '\x9a', // greek small letter epsilon with oxia
@@ -328,9 +330,9 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x22\x23\x25A-Za-z\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xfd])/, [RE_LETTER]],
-            [/^([\s])/, [RE_PASSTHRU]],
-            [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u201e\u2020\u2021\u2026\u2030\u2039\u203a\u2122])/, [RE_ANSI_CONV]]
+            [/^([\x21-\x25\x27\x2b\x2f\x3a\x3b\x40A-Z\x5c\x5e\x60a-z\x80\x81\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xfd])/, [RE_LETTER]],
+            [/^([\s\(\)\*\,\-\.\<\=\>\?\[\]\_\{\|\}\~])/, [RE_PASSTHRU]],
+            [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018\u2019\u201c-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122])/, [RE_ANSI_CONV]]
         ],
         RX_DIAC = '[\u1FBF\u1FC0\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FEF\u1FFD\u1FFE]',
         RX_CAPVOWELS = '[\u0391\u0395\u0397\u0399\u039F\u03A1\u03A5\u03A9]', 

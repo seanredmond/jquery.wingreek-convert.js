@@ -94,6 +94,7 @@
         '\x7a': '\u03B6', //  greek small letter zeta
         '\x80': '\u00ab', //  left-pointing double angle quotation mark
         '\x81': '\u00bb', //  right-pointing double angle quotation mark
+        '\x82': '\u1fb1', //  greek small letter alpha with macron
         '\x83': '\u1F31', //  greek small letter iota with dasia
         '\x84': '\u1F30', //  greek small letter iota with psili
         '\x85': '\u1F77', //  greek small letter iota with oxia
@@ -221,9 +222,8 @@
     },
         ansi_conversion = {
             '\u20ac': '\x80', // left-pointing double angle quotation mark
-            // // no mapping 0x0081   varia
-            // // no mapping 0x0082   perispomeni
-            // '\u201a': '\x82', // small alpha w/ dasia & varia
+            // no mapping 0x0081   varia
+            '\u201a': '\x82', // greek small letter alpha with macron
             '\u0192': '\x83', // greek small letter iota with dasia
             '\u201e': '\x84', // greek small letter iota with psili
             '\u2026': '\x85', // greek small letter iota with oxia
@@ -332,9 +332,9 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x21-\x27\x2b\x2f\x3a\x40A-Za-z\x5c\x5e\x60\x80-\x9f\xa1-\xff])/, [RE_LETTER]],
-            [/^([\s\(\)\,\-\.\´0-9\<\>\[\]\`\{\}\|])/, [RE_PASSTHRU]],
-            [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018\u2019\u201c-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122])/, [RE_ANSI_CONV]]
+            [/^([\x21-\x27\x2b\x2f\x3a\x3b\x40A-Za-z\x5c\x5e\x60\x80-\x9f\xa1-\xff])/, [RE_LETTER]],
+            [/^([\s\(\)\*\,\-\.\´0-9\<\=\>\?\[\]\_\`\{\}\~\|])/, [RE_PASSTHRU]],
+            [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018\u2019\u201a\u201c-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122])/, [RE_ANSI_CONV]]
         ],
         RX_DIAC = '[\u1FBF\u1FC0\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FEF\u1FFD\u1FFE]',
         RX_CAPVOWELS = '[\u0391\u0395\u0397\u0399\u039F\u03A1\u03A5\u03A9]', 

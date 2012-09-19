@@ -30,7 +30,7 @@
         '\x23': '\u03DC', //  greek letter digamma
         '\x24': '\u03DA', //  greek letter stigma
         '\x25': '\u03D8', //  greek letter archaic koppa
-        '\x26': '\u03F2', //  greek lunate sigma symbol
+        '\x26': '\u03DF', //  greek small letter koppa
         '\x27': '\u1FBF', //  greek psili
         '\x2b': '\u203B', //  reference mark
         '\x2f': '\u1FFD', //  greek oxia
@@ -332,8 +332,8 @@
         RE_ANSI_CONV = 2,
         RE_PASSTHRU = 8,
         regexes = [
-            [/^([\x21-\x25\x27\x2b\x2f\x3a\x3b\x40A-Z\x5c\x5e\x60a-z\x80\x81\x83-\x90\x98-\x9f\xa1-\xcf\xd0-\xff])/, [RE_LETTER]],
-            [/^([\s\(\)\*\,\-\.\<\=\>\?\[\]\_\{\|\}\~0-9])/, [RE_PASSTHRU]],
+            [/^([\x21-\x27\x2b\x2f\x3a\x40A-Za-z\x5c\x5e\x60\x80-\x9f\xa1-\xff])/, [RE_LETTER]],
+            [/^([\s\(\)\,\-\.\´0-9\<\>\[\]\`\{\}\|])/, [RE_PASSTHRU]],
             [/^([\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018\u2019\u201c-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122])/, [RE_ANSI_CONV]]
         ],
         RX_DIAC = '[\u1FBF\u1FC0\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FEF\u1FFD\u1FFE]',
@@ -385,7 +385,6 @@
                 if (match === null) {
                     $.error('Invalid character \"' + wingreek[0] + '\" (' + wingreek[0].charCodeAt(0).toString(16) + ')');
                 }
-
                 return greek +
                     methods._atoms(
                         wingreek.substring(match.index + match[0].length)
@@ -421,6 +420,7 @@
                             n.data = converted;
                         } catch (e) {
                             console.log(e.message + ' in ' + n.data);
+                            throw e;
                         }
                     } else {
                         $(n).wingreek2utf8('convert', options);

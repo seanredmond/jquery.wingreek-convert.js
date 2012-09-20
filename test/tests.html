@@ -154,6 +154,20 @@
         equal(greek.text(), "᾿Α᾿Ε᾿Η᾿Ι᾿Ο᾿Ω");
     });
 
+    test("Throw invalid character error", function () {
+        var greek = $('#invalid-ascii');
+        raises(function () {
+            greek.wingreek2utf8('convert', {combine: false})}, 
+            Error, 
+            "Must throw error to pass."
+        );
+    });
+
+    test("Ignore invalid character error", function () {
+        var greek = $('#invalid-ascii');
+        greek.wingreek2utf8('convert', {combine: false, ignore_invalid: true});
+        equal(greek.text(), 'α  β');
+    });
     </script>
 </head>
 <body>
@@ -206,6 +220,9 @@
         <p id='combined-cap-rough-grave'>&#x95;A&#x95;E&#x95;H&#x95;I&#x95;O&#x95;U&#x95;W</p>
 
         <p id='combined-cap-smooth-grave'>&#x96;A&#x96;E&#x96;H&#x96;I&#x96;O&#x96;W</p>
+
+        <p id='invalid-ascii'>a &#x7f; b</p>
+
     </div>
 </body>
 </html>

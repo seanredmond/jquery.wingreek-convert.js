@@ -341,20 +341,24 @@
 
         methods = {
             init: function (options) {
-                var x = 1;
+                console.log(options)
                 return this.each(function () {
                     var lmnt = $(this);
                 });
             },
 
-            _atoms: function (wingreek) {
+            _atoms: function (wingreek, options) {
                 var match = null,
-                    greek;
+                    greek,
+                    defaults = {
+                        ignore_invalid: false
+                    };
 
                 if (!wingreek) {
                     return '';
                 }
 
+                options = $.extend({}, defaults, options);
                 $.each(regexes, function (i, re) {
                     match = re[0].exec(wingreek);
                     if (match) {
@@ -383,45 +387,51 @@
                 });
 
                 if (match === null) {
+                    if (options.ignore_invalid === true) {
+                        return methods._atoms(
+                            wingreek.substring(1),
+                            options
+                        );
+                    } 
                     $.error('Invalid character \"' + wingreek[0] + '\" (' + wingreek[0].charCodeAt(0).toString(16) + ')');
                 }
+
                 return greek +
                     methods._atoms(
-                        wingreek.substring(match.index + match[0].length)
+                        wingreek.substring(match.index + match[0].length),
+                        options
                     );
             },
 
             convert: function (options) {
                 var lmnt = this,
-                    defaults = {combine: true};
+                    defaults = {
+                        combine: true,
+                        ignore_invalid: false
+                    };
 
                 options = $.extend({}, defaults, options);
                 lmnt.contents().each(function (i, n) {
                     if (n.nodeType === 3) {
-                        try {
-                            var converted = methods._atoms(n.data),
-                                uncombined = new RegExp(
-                                    RX_DIAC + RX_CAPVOWELS, 'g'),
-                                match;
+                        var converted = methods._atoms(n.data, options),
+                            uncombined = new RegExp(
+                                RX_DIAC + RX_CAPVOWELS, 'g'),
+                            match;
 
-                            // Look for characters that can be combined
-                            if (options['combine'] === true) {
-                                match = converted.match(uncombined);
-                                if (match) {
-                                    $.each(match, function (i, m) {
-                                        if (combinations.hasOwnProperty(m)) {
-                                            converted = converted.replace(
-                                                new RegExp(m, "g"), 
-                                                combinations[m]);
-                                        }
-                                    });
-                                }
+                        // Look for characters that can be combined
+                        if (options['combine'] === true) {
+                            match = converted.match(uncombined);
+                            if (match) {
+                                $.each(match, function (i, m) {
+                                    if (combinations.hasOwnProperty(m)) {
+                                        converted = converted.replace(
+                                            new RegExp(m, "g"), 
+                                            combinations[m]);
+                                    }
+                                });
                             }
-                            n.data = converted;
-                        } catch (e) {
-                            console.log(e.message + ' in ' + n.data);
-                            throw e;
                         }
+                        n.data = converted;
                     } else {
                         $(n).wingreek2utf8('convert', options);
                     }
